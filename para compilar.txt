@@ -1,0 +1,5 @@
+go build -buildmode=c-archive xlsx2txt.go
+gcc -m32 -shared -pthread -o xlsx2txt.dll xlsx2txt.c xlsx2txt.a -lWinMM -lntdll -lWS2_32
+
+$env:goarch=386 
+$env:cgo_enabled=1
